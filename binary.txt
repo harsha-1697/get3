@@ -1,0 +1,58 @@
+echo "enter the limit"
+read n
+#taking input from user
+echo "enter numbers in array"
+for (( i = 0 ;i < $n; i++ ))
+do
+read m
+a[i]=$m
+done
+
+#do the sorting of numbers
+for (( i = 0;i < $n; i++ ))
+do
+for (( j = $i; j < $n; j++ ))
+do
+if [ ${a[$i]} -lt ${a[$j]} ]
+then
+t=${a[$i]}
+a[$i]=${a[$j]}
+a[$j]=$t
+fi
+done
+done
+
+#printing sorted array
+echo "sorted numbers"
+for (( i=0; i < $n; i++ ))
+do
+echo ${a[$i]}
+done
+
+#search for an element
+echo "enter the element to be searched"
+read s
+l=0;
+c=0;
+u=$(($n-1))
+while [ $l -le $u ]
+do
+mid=$(((( $l+$u ))/2 ))
+if [ $s -eq ${a[mid]} ]
+then
+c=1
+break
+elif [ $s -lt ${a[$mid]} ]
+then
+u=$(($mid-1))
+else
+l=$((mid+1))
+fi
+done
+if [ $c -eq 1 ]
+then
+echo element found at position $((mid+1))
+else
+echo element not found
+fi
+

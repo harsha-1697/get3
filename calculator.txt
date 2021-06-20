@@ -1,0 +1,40 @@
+while true
+do
+echo "............SIMPLE CALCULATOR..........."
+echo " 1.ADDITION"
+echo " 2.SUBTRACTION"
+echo " 3.MULTIPLICATION"
+echo " 4.EXIT"
+echo "Enter your choice:"
+read ch
+if test $ch -eq 1
+then
+echo "enter two number to Add"
+read x
+read y
+r=`expr $x + $y`
+echo "Result:$r"
+sleep 2
+elif test $ch -eq 2
+then
+echo "Enter two number to Subtract"
+read x
+read y
+r=`expr $x - $y`
+echo "Result:$r"
+sleep 2
+elif test $ch -eq 3
+then
+echo "Enter two number to Multiply"
+read x
+read y
+r=`expr $x \* $y`
+echo "Result:$r"
+sleep 2
+else
+echo "stoping the script"
+sleep 1
+exit
+fi
+done
+
