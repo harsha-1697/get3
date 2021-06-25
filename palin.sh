@@ -1,4 +1,4 @@
-echo "enter a string to be entered"
+echo "enter a number to be entered"
 read str
 len= `echo $str | wc -c` 
 len=`expr $len - 1`
